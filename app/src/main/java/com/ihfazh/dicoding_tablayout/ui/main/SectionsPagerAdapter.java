@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.ihfazh.dicoding_tablayout.HomeFragment;
+import com.ihfazh.dicoding_tablayout.ProfileFragment;
 import com.ihfazh.dicoding_tablayout.R;
 
 /**
@@ -29,6 +31,16 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
+        Fragment fragment = null;
+
+        switch (position){
+            case 0:
+                fragment = new HomeFragment();
+                return fragment;
+            case 1:
+                fragment = new ProfileFragment();
+                return fragment;
+        }
         return PlaceholderFragment.newInstance(position + 1);
     }
 
